@@ -122,18 +122,18 @@ form>[data-v-3702386b] {
   }
 }
 
-form[data-v-14bb7acb] {
+form[data-v-a90b70c6] {
   color: #bb1919
 }
 
-.clear[data-v-f1d52b08] {
-  left: 280px;
+.clear[data-v-ecfb186e] {
+  left: 60%;
   margin: auto;
   color: #101110
 }
 
-.check[data-v-f1d52b08],
-.clear[data-v-f1d52b08] {
+.check[data-v-ecfb186e],
+.clear[data-v-ecfb186e] {
   text-align: center;
   font-weight: lighter;
   position: absolute;
@@ -145,8 +145,8 @@ form[data-v-14bb7acb] {
   box-shadow: 2px 2px 5px #2e6110
 }
 
-.check[data-v-f1d52b08] {
-  left: 170px;
+.check[data-v-ecfb186e] {
+  left: 32%;
   color: #000
 }
 
