@@ -23,7 +23,7 @@ var app = document.querySelector('#app');
 // 设置图片大小
 var $width = 50;
 var $height = 50;
-var $storeNum = 8;
+var $storeNum = 7;
 // 多少组 3的倍数 确保有解
 var BlockNums = 15;
 // 存放Block
