@@ -34,9 +34,9 @@
 
 #storageBox {
   height: 50px;
-  width: 80%;
+  width: 70%;
   position: absolute;
   border-radius: 8px;
   bottom: 40px;
-  left: 45px;
+  left: 70px;
 }
