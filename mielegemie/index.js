@@ -25,7 +25,7 @@ var $width = 50;
 var $height = 50;
 var $storeNum = 8;
 // 多少组 3的倍数 确保有解
-var BlockNums = 30;
+var BlockNums = 15;
 // 存放Block
 var allBlock = [];
 // 图片的地址
@@ -79,6 +79,7 @@ function computedBoxPosition(target, targetDomClass) {
     })
     targetDomClass.left = startLeft;
     hasBlockArr.push(Item);
+    Item.targetDomClass.blockState = false;
   }
   else if(hasBlockArr.length<=$storeNum){
     const hasIndex = hasBlockArr.findIndex((v) => {
@@ -108,6 +109,7 @@ function computedBoxPosition(target, targetDomClass) {
       })
       targetDomClass.left = left;
       hasBlockArr.splice(hasIndex, 0, Item);
+      Item.targetDomClass.blockState = false;
     }
   }
   Item.target.classList.remove('noSelect');
@@ -180,7 +182,7 @@ function checkBox() {
   // 验证状态
   setTimeout(() => {
     GameState();
-  }, 1000);
+  }, 500);
 }
 // 定义点击事件
 function clickBlock(target, targetDomClass) {
@@ -260,7 +262,7 @@ function drawBlock(gloup) {
     var vBlock = new Block(item, index);
     allBlock.push(vBlock);
   });
-  console.log(allBlock);
+  // console.log(allBlock);
   allBlock.forEach(function (item) {
     app.appendChild(item.draw());
   });
