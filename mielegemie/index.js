@@ -40,7 +40,7 @@ var IMGS = [
   './img/8.png',
   './img/9.png',
   './img/10.png',
-  './img/11.png',
+  // './img/11.png',
 ];
 // 游戏是否结束
 let gameOver = false;
@@ -64,13 +64,12 @@ const hasBlockArr = [];
 // 获取收集盒的位置信息
 var storageBoxPosition;
 //  获取收集盒中第一张图片的位置
-var startLeft;
 // 将块放入收集盒中
 function computedBoxPosition(target, targetDomClass) {
   setStyle(target, { zIndex: 9999 })
   const Item = {target, targetDomClass}
   storageBoxPosition = storageBox.getBoundingClientRect();
-  startLeft = storageBoxPosition.x - AppPosition.x + 5;
+  const startLeft = storageBoxPosition.x - AppPosition.x + 5;
   const top = storageBoxPosition.y - AppPosition.y + 5 + 'px';
   if (!hasBlockArr.length) {
     setStyle(target, {
@@ -80,7 +79,7 @@ function computedBoxPosition(target, targetDomClass) {
     targetDomClass.left = startLeft;
     hasBlockArr.push(Item);
   }
-  else{
+  else if(hasBlockArr.length<=$storeNum){
     const hasIndex = hasBlockArr.findIndex((v) => {
       return v.targetDomClass.n==targetDomClass.n
     })
@@ -142,7 +141,6 @@ function GameState() {
   if (gameOver) {
     window.location.reload(false)
   }
-
 }
 // 消除相同块
 function checkBox() {
@@ -155,7 +153,7 @@ function checkBox() {
       index: index,
       id:item.targetDomClass.index
     })
-    for (const key in checkMap) {
+    for (let key in checkMap) {
       if (checkMap[key].length == 3) {
         // console.log('keyi');
         // 删除数组中元素
