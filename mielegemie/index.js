@@ -61,6 +61,7 @@ function calPosition() {
 const AppPosition = calPosition();
 // 收集盒数组
 const hasBlockArr = [];
+var startLeft;
 // 获取收集盒的位置信息
 var storageBoxPosition;
 //  获取收集盒中第一张图片的位置
@@ -69,7 +70,7 @@ function computedBoxPosition(target, targetDomClass) {
   setStyle(target, { zIndex: 9999 })
   const Item = {target, targetDomClass}
   storageBoxPosition = storageBox.getBoundingClientRect();
-  const startLeft = storageBoxPosition.x - AppPosition.x + 5;
+  startLeft = storageBoxPosition.x - AppPosition.x + 5;
   const top = storageBoxPosition.y - AppPosition.y + 5 + 'px';
   if (!hasBlockArr.length) {
     setStyle(target, {
@@ -166,7 +167,7 @@ function checkBox() {
           })
           // 改变其他dom元素的位置
           hasBlockArr.forEach((item, index) => {
-            let left = startLeft + index * $width + 'px';
+            var left = startLeft + index * $width + 'px';
             setStyle(item.target, {
               left
             });
