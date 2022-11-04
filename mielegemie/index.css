@@ -34,7 +34,7 @@
 
 #storageBox {
   height: 50px;
-  width: 70px;
+  width: 70%;
   position: absolute;
   border-radius: 8px;
   bottom: 40px;
@@ -42,12 +42,30 @@
 }
 
 @media only screen and (max-width: 450px){
+  .container{
+    background: linear-gradient(to top, rgb(145, 189, 65), rgb(212, 240, 114) );
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  #app {
+    width: 400px;
+    height: 700px;
+    margin: 0px auto;
+    background: url('./img/BG.jpg');
+    background-size: 100% auto;
+    background-position: center;
+    position: relative;
+    border-radius: 15px;
+  }
+
   #storageBox {
     height: 50px;
     width: 350px;
     position: absolute;
     border-radius: 8px;
     bottom: 40px;
-    left: 25px;
+    left: 20px;
   }
 }
