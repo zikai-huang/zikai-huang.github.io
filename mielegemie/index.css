@@ -34,9 +34,20 @@
 
 #storageBox {
   height: 50px;
-  width: 350px;
+  width: 70px;
   position: absolute;
   border-radius: 8px;
   bottom: 40px;
   left: 70px;
+}
+
+@media only screen and (max-width: 450px){
+  #storageBox {
+    height: 50px;
+    width: 350px;
+    position: absolute;
+    border-radius: 8px;
+    bottom: 40px;
+    left: 25px;
+  }
 }
