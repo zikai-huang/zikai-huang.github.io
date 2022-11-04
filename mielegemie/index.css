@@ -52,7 +52,7 @@
   #app {
     width: 400px;
     height: 700px;
-    margin: 0px auto;
+    margin: 0px 0px;
     background: url('./img/BG.jpg');
     background-size: 100% auto;
     background-position: center;
