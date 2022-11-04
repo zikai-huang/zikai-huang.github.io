@@ -41,7 +41,7 @@
   left: 70px;
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 450px){
   .container{
     background: linear-gradient(to top, rgb(145, 189, 65), rgb(212, 240, 114) );
     width: 100vw;
