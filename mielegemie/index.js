@@ -182,7 +182,7 @@ function checkBox() {
   // 验证状态
   setTimeout(() => {
     GameState();
-  }, 500);
+  }, 300);
 }
 // 定义点击事件
 function clickBlock(target, targetDomClass) {
