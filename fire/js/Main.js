@@ -84,7 +84,7 @@
 			var gap = 4;
 			var fontSize = 100;
 
-			textctx.font = fontSize + "px Verdana";
+			textctx.font = fontSize + "px normal";
 			textctx.fillStyle = "#ffffff";
 
 			var textWidth = textctx.measureText(text).width;
