@@ -52,12 +52,12 @@ javascript:
 		// let nowTime = new Date();//获取当前时间
 		// let setTime = new Date('2023/1/1');//设置结束时间
 		// let remianAllSeconds = Math.floor((setTime.getTime() - nowTime.getTime()) / 1000);//剩余总秒数
-		let remianAllSeconds = [0, 0, 1][Math.floor(Math.random() * 3)]
+		let remianAllSeconds = [1, 1][Math.floor(Math.random() * 2)]
 		if (remianAllSeconds > 0) {
 			createFireworks(x, y);
 		}
 		else {
-			createFireworks(x, y, ['逢考必过', '心想事成', '平安喜乐', '万事顺意', '旗开得胜', '新年快乐'][Math.floor(Math.random() * 6)] )
+			createFireworks(x, y, ['逢考必过', '心想事成', '平安喜乐', '万事顺意', '旗开得胜', '亲爱的然然新年快乐！', '亲爱的然然新年快乐！'][Math.floor(Math.random() * 7)] )
 			// createFireworks(x, y, ['亲爱的然然新年快乐！']);
 		}
 	}
@@ -85,7 +85,7 @@ javascript:
 			textctx.fillStyle = "red";
 
 			var textWidth = textctx.measureText(text).width;
-			var textHeight = textWidth / 4;
+			var textHeight = fontSize;
 			console.log(textWidth, textHeight);
 			textctx.fillText(text, 0, textHeight);
 			var imgData = textctx.getImageData(0, 0, textWidth, textHeight * 1.2);
