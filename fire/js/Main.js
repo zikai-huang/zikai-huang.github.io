@@ -85,7 +85,7 @@ javascript:
 			textctx.fillStyle = "red";
 
 			var textWidth = textctx.measureText(text).width;
-			var textHeight = (textWidth / 6) * 1.2;
+			var textHeight = textWidth / 4;
 			console.log(textWidth, textHeight);
 			textctx.fillText(text, 0, textHeight);
 			var imgData = textctx.getImageData(0, 0, textWidth, textHeight * 1.2);
