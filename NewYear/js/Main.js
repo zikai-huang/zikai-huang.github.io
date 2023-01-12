@@ -36,7 +36,7 @@
 	function mouseDownHandler(e) {
 		var x = e.clientX;
 		var y = e.clientY;
-		debugger
+		
 		// let nowTime = new Date();//获取当前时间
 		// let setTime = new Date('2023/1/1');//设置结束时间
 		// let remianAllSeconds = Math.floor((setTime.getTime() - nowTime.getTime()) / 1000);//剩余总秒数
