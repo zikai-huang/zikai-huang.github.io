@@ -66,8 +66,8 @@
 
 		if (text != "") {
 
-			var gap = 3;
-			var fontSize = 80;
+			var gap = 2;
+			var fontSize = 30;
 
 			textctx.font = fontSize + "px Mincho";
 			textctx.fillStyle = "#ffffff";
