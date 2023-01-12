@@ -66,7 +66,7 @@
 
 		if (text != "") {
 
-			var gap = 6;
+			var gap = 2;
 			var fontSize = 100;
 
 			textctx.font = fontSize + "px Verdana";
