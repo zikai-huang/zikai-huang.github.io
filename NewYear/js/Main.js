@@ -45,8 +45,9 @@
 			createFireworks(x, y);
 		}
 		else {
-			createFireworks(x, y, ['逢考必过', '心想事成', '平安喜乐', '万事顺意', '旗开得胜','然然新年快乐', '然然新年快乐']
-			[Math.floor(Math.random() * 7)]);
+			//createFireworks(x, y, ['逢考必过', '心想事成', '平安喜乐', '万事顺意', '旗开得胜','然然新年快乐', '然然新年快乐']
+			//[Math.floor(Math.random() * 7)]);
+			createFireworks(x, y, ['亲爱的然然新年快乐!']);
 		}
 	}
 	document.addEventListener("mousedown", mouseDownHandler);
@@ -64,12 +65,12 @@
 			p.alpha = (Math.floor(Math.random() * 61) + 40) / 100;
 		}
 
-		if (text != "") {
+		if (text != '') {
 
 			var gap = 2;
 			var fontSize = 30;
 
-			textctx.font = fontSize + "px Mincho";
+			textctx.font = fontSize + "px Verdana";
 			textctx.fillStyle = "#ffffff";
 
 			var textWidth = textctx.measureText(text).width;
@@ -78,8 +79,8 @@
 			textctx.fillText(text, 0, textHeight);
 			var imgData = textctx.getImageData(0, 0, textWidth, textHeight * 1.2);
 
-			textctx.fillStyle = "#000000";
-			textctx.fillRect(0, 0, textCanvas.width, textCanvas.height);
+			//textctx.fillStyle = "#000000";
+			//textctx.fillRect(0, 0, textCanvas.width, textCanvas.height);
 
 			for (var h = 0; h < textHeight * 1.2; h += gap) {
 				for (var w = 0; w < textWidth; w += gap) {
