@@ -57,7 +57,7 @@ javascript:
 			createFireworks(x, y);
 		}
 		else {
-			createFireworks(x, y, ['逢考必过', '心想事成', '平安喜乐', '万事顺意', '旗开得胜', '亲爱的然然新年快乐！', '亲爱的然然新年快乐！'][Math.floor(Math.random() * 7)] )
+			createFireworks(x, y, ['逢考必过', '心想事成', '平安喜乐', '万事顺意', '旗开得胜', '新年快乐'][Math.floor(Math.random() * 6)] )
 			// createFireworks(x, y, ['亲爱的然然新年快乐！']);
 		}
 	}
@@ -85,8 +85,8 @@ javascript:
 			textctx.fillStyle = "red";
 
 			var textWidth = textctx.measureText(text).width;
-			var textHeight = fontSize;
-
+			var textHeight = (textWidth / 6 * 1.2);
+			console.log(textWidth, textHeight);
 			textctx.fillText(text, 0, textHeight);
 			var imgData = textctx.getImageData(0, 0, textWidth, textHeight * 1.2);
 
