@@ -1,8 +1,8 @@
 javascript:
 !(function () {
 	var textCanvas = document.createElement("canvas");
-	textCanvas.width = 500;
-	textCanvas.height = 1200;
+	textCanvas.width = window.innerWidth;
+	textCanvas.height = window.innerHeight;
 	var textctx = textCanvas.getContext("2d");
 
 	textctx.fillStyle = "#000000";
