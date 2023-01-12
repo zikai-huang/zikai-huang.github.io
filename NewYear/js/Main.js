@@ -1,4 +1,4 @@
-﻿javascript:
+javascript:
 !(function () {
 	var textCanvas = document.createElement("canvas");
 	textCanvas.width = 1000;
@@ -36,7 +36,7 @@
 	function mouseDownHandler(e) {
 		var x = e.clientX;
 		var y = e.clientY;
-		
+
 		// let nowTime = new Date();//获取当前时间
 		// let setTime = new Date('2023/1/1');//设置结束时间
 		// let remianAllSeconds = Math.floor((setTime.getTime() - nowTime.getTime()) / 1000);//剩余总秒数
@@ -45,9 +45,8 @@
 			createFireworks(x, y);
 		}
 		else {
-			//createFireworks(x, y, ['逢考必过', '心想事成', '平安喜乐', '万事顺意', '旗开得胜','然然新年快乐', '然然新年快乐']
-			//[Math.floor(Math.random() * 7)]);
-			createFireworks(x, y, ['亲爱的然然新年快乐!']);
+			// createFireworks(x, y, ['逢考必过', '心想事成', '平安喜乐', '万事顺意', '旗开得胜', '亲爱的然然新年快乐！', '亲爱的然然新年快乐！']
+			createFireworks(x, y, ['亲爱的然然新年快乐！']);
 		}
 	}
 	document.addEventListener("mousedown", mouseDownHandler);
@@ -65,10 +64,10 @@
 			p.alpha = (Math.floor(Math.random() * 61) + 40) / 100;
 		}
 
-		if (text != '') {
+		if (text != "") {
 
 			var gap = 3;
-			var fontSize = 80;
+			var fontSize = 100;
 
 			textctx.font = fontSize + "px Verdana";
 			textctx.fillStyle = "#ffffff";
@@ -79,8 +78,8 @@
 			textctx.fillText(text, 0, textHeight);
 			var imgData = textctx.getImageData(0, 0, textWidth, textHeight * 1.2);
 
-			//textctx.fillStyle = "#000000";
-			//textctx.fillRect(0, 0, textCanvas.width, textCanvas.height);
+			// textctx.fillStyle = "#000000";
+			// textctx.fillRect(0, 0, textCanvas.width, textCanvas.height);
 
 			for (var h = 0; h < textHeight * 1.2; h += gap) {
 				for (var w = 0; w < textWidth; w += gap) {
@@ -102,6 +101,7 @@
 					setupColors(p);
 
 					particles.push(p);
+
 				}
 			}
 		} else {
@@ -119,13 +119,13 @@
 				p.radians = radians;
 
 				//大小
-				p.size = Math.random()*4+1;
+				p.size = Math.random() * 4 + 1;
 
 				//速度
-				p.speed = Math.random()*2+.4;
+				p.speed = Math.random() * 2 + .4;
 
 				//半径
-				p.radius = Math.random()*81+50;
+				p.radius = Math.random() * 81 + 50;
 
 				p.fx = x + Math.cos(radians) * p.radius;
 				p.fy = y + Math.sin(radians) * p.radius;
@@ -170,7 +170,7 @@
 			var str = showTime();
 			if (str !== undefined) {
 				createFireworks(893, 333, showTime());
-            }
+			}
 
 		}
 		context.globalCompositeOperation = 'destination-out';
