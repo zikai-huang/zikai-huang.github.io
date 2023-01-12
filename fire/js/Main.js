@@ -1,15 +1,9 @@
 javascript:
 !(function () {
 	var textCanvas = document.createElement("canvas");
-	textCanvas.width = 1000*2;
-	textCanvas.height = 300*2;
+	textCanvas.width = 500;
+	textCanvas.height = 1200;
 	var textctx = textCanvas.getContext("2d");
-	textctx.scale(2,2);
-	// let dpr = window.devicePixelRatio;
-	// let { width: cssWidth, height: cssHeight } = textCanvas.getBoundingClientRect();
-	// textCanvas.width = dpr * cssWidth;
-	// textCanvas.height = dpr * cssHeight;
-	// textctx.scale(dpr, dpr);
 
 	textctx.fillStyle = "#000000";
 	// textctx.fillStyle = "#ffff";
@@ -24,11 +18,19 @@ javascript:
 	canvas.style.zIndex = -1;
 
 	var context = canvas.getContext("2d");
-	context.scale(2,2);
+
+	// let dpr = window.devicePixelRatio;
+	// let { width: cssWidth, height: cssHeight } = canvas.getBoundingClientRect();
+	// canvas.width = dpr * cssWidth;
+	// canvas.height = dpr * cssHeight;
+	// context.scale(dpr, dpr);
 
 	function resizeCanvas() {
-		canvas.width = window.innerWidth*2;
-		canvas.height = window.innerHeight*2;
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		// canvas.width = 500;
+		// canvas.height = 1200;
+		// console.log(canvas.width, canvas.height)
 
 		clearCanvas();
 	}
@@ -76,11 +78,11 @@ javascript:
 
 		if (text != "") {
 
-			var gap = 4;
-			var fontSize = 100;
+			var gap = 3;
+			var fontSize = 50;
 
 			textctx.font = fontSize + "px normal";
-			textctx.fillStyle = "#ffffff";
+			textctx.fillStyle = "red";
 
 			var textWidth = textctx.measureText(text).width;
 			var textHeight = fontSize;
@@ -107,7 +109,7 @@ javascript:
 					p.fy = y + h - textHeight / 2;
 
 					p.size = Math.floor(Math.random() * 2) + 1;
-					p.speed = 1;
+					p.speed = 0.1;
 					setupColors(p);
 
 					particles.push(p);
