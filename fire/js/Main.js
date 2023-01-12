@@ -1,15 +1,15 @@
-﻿javascript:
+javascript:
 !(function () {
 	var textCanvas = document.createElement("canvas");
 	textCanvas.width = 1000;
 	textCanvas.height = 300;
 	var textctx = textCanvas.getContext("2d");
 
-	let dpr = window.devicePixelRatio;
-	let { width: cssWidth, height: cssHeight } = textCanvas.getBoundingClientRect();
-	textCanvas.width = dpr * cssWidth;
-	textCanvas.height = dpr * cssHeight;
-	textctx.scale(dpr, dpr);
+	// let dpr = window.devicePixelRatio;
+	// let { width: cssWidth, height: cssHeight } = textCanvas.getBoundingClientRect();
+	// textCanvas.width = dpr * cssWidth;
+	// textCanvas.height = dpr * cssHeight;
+	// textctx.scale(dpr, dpr);
 
 	textctx.fillStyle = "#000000";
 	// textctx.fillStyle = "#ffff";
@@ -25,11 +25,11 @@
 
 	var context = canvas.getContext("2d");
 
-	// let dpr = window.devicePixelRatio;
-	// let { width: cssWidth, height: cssHeight } = canvas.getBoundingClientRect();
-	// canvas.width = dpr * cssWidth;
-	// canvas.height = dpr * cssHeight;
-	// context.scale(dpr, dpr);
+	let dpr = window.devicePixelRatio;
+	let { width: cssWidth, height: cssHeight } = canvas.getBoundingClientRect();
+	canvas.width = dpr * cssWidth;
+	canvas.height = dpr * cssHeight;
+	context.scale(dpr, dpr);
 
 	function resizeCanvas() {
 		canvas.width = window.innerWidth;
