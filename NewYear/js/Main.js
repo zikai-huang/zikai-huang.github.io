@@ -40,13 +40,13 @@ javascript:
 		// let nowTime = new Date();//获取当前时间
 		// let setTime = new Date('2023/1/1');//设置结束时间
 		// let remianAllSeconds = Math.floor((setTime.getTime() - nowTime.getTime()) / 1000);//剩余总秒数
-		let remianAllSeconds = [0, 0, 1][[Math.floor(Math.random() * 3)]]
+		let remianAllSeconds = [0, 0, 1][Math.floor(Math.random() * 3)]
 		if (remianAllSeconds > 0) {
 			createFireworks(x, y);
 		}
 		else {
-			// createFireworks(x, y, ['逢考必过', '心想事成', '平安喜乐', '万事顺意', '旗开得胜', '亲爱的然然新年快乐！', '亲爱的然然新年快乐！']
-			createFireworks(x, y, ['亲爱的然然新年快乐！']);
+			createFireworks(x, y, ['逢考必过', '心想事成', '平安喜乐', '万事顺意', '旗开得胜', '亲爱的然然新年快乐！', '亲爱的然然新年快乐！'][Math.floor(Math.random() * 7)] )
+			// createFireworks(x, y, ['亲爱的然然新年快乐！']);
 		}
 	}
 	document.addEventListener("mousedown", mouseDownHandler);
@@ -56,17 +56,17 @@ javascript:
 	function createFireworks(x, y, text = "") {
 
 		var hue = Math.random() * 360;
-		var hueVariance = 30;
+		var hueVariance = 60;
 
 		function setupColors(p) {
 			p.hue = Math.floor(Math.random() * ((hue + hueVariance) - (hue - hueVariance))) + (hue - hueVariance);
 			p.brightness = Math.floor(Math.random() * 21) + 50;
-			p.alpha = (Math.floor(Math.random() * 61) + 40) / 100;
+			p.alpha = (Math.floor(Math.random() * 60) + 40) / 100;
 		}
 
 		if (text != "") {
 
-			var gap = 3;
+			var gap = 4;
 			var fontSize = 100;
 
 			textctx.font = fontSize + "px Verdana";
@@ -78,8 +78,8 @@ javascript:
 			textctx.fillText(text, 0, textHeight);
 			var imgData = textctx.getImageData(0, 0, textWidth, textHeight * 1.2);
 
-			// textctx.fillStyle = "#000000";
-			// textctx.fillRect(0, 0, textCanvas.width, textCanvas.height);
+			textctx.fillStyle = "#000000";
+			textctx.fillRect(0, 0, textCanvas.width, textCanvas.height);
 
 			for (var h = 0; h < textHeight * 1.2; h += gap) {
 				for (var w = 0; w < textWidth; w += gap) {
@@ -119,10 +119,10 @@ javascript:
 				p.radians = radians;
 
 				//大小
-				p.size = Math.random() * 4 + 1;
+				p.size = Math.random() * 2 + 1;
 
 				//速度
-				p.speed = Math.random() * 2 + .4;
+				p.speed = Math.random() * 1 + .4;
 
 				//半径
 				p.radius = Math.random() * 81 + 50;
