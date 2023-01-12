@@ -67,8 +67,8 @@
 
 		if (text != '') {
 
-			var gap = 2;
-			var fontSize = 30;
+			var gap = 3;
+			var fontSize = 80;
 
 			textctx.font = fontSize + "px Verdana";
 			textctx.fillStyle = "#ffffff";
