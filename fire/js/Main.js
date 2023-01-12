@@ -1,10 +1,10 @@
 javascript:
 !(function () {
 	var textCanvas = document.createElement("canvas");
-	textCanvas.width = 1000;
-	textCanvas.height = 300;
+	textCanvas.width = 1000*2;
+	textCanvas.height = 300*2;
 	var textctx = textCanvas.getContext("2d");
-
+	textctx.scale(2,2);
 	// let dpr = window.devicePixelRatio;
 	// let { width: cssWidth, height: cssHeight } = textCanvas.getBoundingClientRect();
 	// textCanvas.width = dpr * cssWidth;
@@ -24,16 +24,11 @@ javascript:
 	canvas.style.zIndex = -1;
 
 	var context = canvas.getContext("2d");
-
-	let dpr = window.devicePixelRatio;
-	let { width: cssWidth, height: cssHeight } = canvas.getBoundingClientRect();
-	canvas.width = dpr * cssWidth;
-	canvas.height = dpr * cssHeight;
-	context.scale(dpr, dpr);
+	context.scale(2,2);
 
 	function resizeCanvas() {
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight;
+		canvas.width = window.innerWidth*2;
+		canvas.height = window.innerHeight*2;
 
 		clearCanvas();
 	}
