@@ -10,14 +10,25 @@
             width: 100vw;
             height: 100vh;
         }
+        .title{
+            font-size: 30px;
+            background: linear-gradient(to bottom,#f0610e, #e8771a, #fff34a);
+  	        -webkit-background-clip: text;
+  	        color: transparent;
+            margin: auto;
+            text-align: center;
+            margin-top:20px
 
+            /* background-color: white; */
+        }
     </style>
+    <h1 class="title">祝亲爱的然然新年快乐！</h1>
 </head>
 
 <body>
     <style type="text/css">
         body {
-            background-color: #000; 
+            background-color: #000;
             /* background:url('/moon.jpg') */
 
         }
@@ -52,17 +63,16 @@
             let str;
             let remianAllSeconds = Math.floor((setTime.getTime() - nowTime.getTime()) / 1000);//剩余总秒数
             if (remianAllSeconds < 0) {
-                console.log("执行vioder");
+                // console.log("执行vioder");
                 let vider = document.getElementById("video_see");
-                vider.play();
-                vider.muted = false;
+                // vider.play();
+                // vider.muted = false;
                 $('#fireworksField').show();
                 clearInterval(time)
             } else {
                 $('#fireworksField').hide();
             }
         }
-
 
     </script>
 </body>
