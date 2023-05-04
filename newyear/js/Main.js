@@ -40,7 +40,7 @@
 		// let nowTime = new Date();//获取当前时间
 		// let setTime = new Date('2023/1/1');//设置结束时间
 		// let remianAllSeconds = Math.floor((setTime.getTime() - nowTime.getTime()) / 1000);//剩余总秒数
-		let remianAllSeconds = [0, 0, 1][Math.floor(Math.random() * 3)]
+		let remianAllSeconds = [1, 1, 1][Math.floor(Math.random() * 3)]
 		if (remianAllSeconds > 0) {
 			createFireworks(x, y);
 		}
