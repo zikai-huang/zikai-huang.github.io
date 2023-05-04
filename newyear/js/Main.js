@@ -45,8 +45,8 @@
 			createFireworks(x, y);
 		}
 		else {
-			createFireworks(x, y, ['逢考必过', '心想事成', '平安喜乐', '万事顺意', '旗开得胜', '亲爱的然然新年快乐！', '亲爱的然然新年快乐！'][Math.floor(Math.random() * 7)] )
-			// createFireworks(x, y, ['亲爱的然然新年快乐！']);
+			createFireworks(x, y, ['天天可爱', '天天开心', 'Dear Girl'][Math.floor(Math.random() * 3)] )
+			// createFireworks(x, y, ['']);
 		}
 	}
 	document.addEventListener("mousedown", mouseDownHandler);
