@@ -69,7 +69,7 @@
 			var gap = 6;
 			var fontSize = 60;
 
-			textctx.font = fontSize + "px Verdana";
+			textctx.font = fontSize + "rem Verdana";
 			textctx.fillStyle = "#ffffff";
 
 			var textWidth = textctx.measureText(text).width;
