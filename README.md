@@ -1,4 +1,3 @@
-## https://zikai-huang.github.io/Fire/
 ## https://zikai-huang.github.io/ToDoItem/
 ## https://zikai-huang.github.io/expanding_card/
 ## https://zikai-huang.github.io/shop_manager/
