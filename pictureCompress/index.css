@@ -29,22 +29,22 @@ html body{
 }
 .img {
   margin-left: 30px;
-  width: 600px;
+  width: 15vw;
 }
 @media only screen and (max-width: 450px){
   .content {
-    height: 80vh;
+    height: 85vh;
     margin: 20px;
   }
   .header {
-    height: 30vh;
+    height: 70vh;
     width: 100%;
     flex-direction: column;
     align-items: start;
     justify-content: space-around;
   }
   .img {
-    width: 90vw;
+    width: 55vw;
     margin-left: 0;
   }
 }
