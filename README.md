@@ -4,3 +4,4 @@
 # 羊了个羊翻版 https://zikai-huang.github.io/mielegemie/
 # 新年烟花 https://zikai-huang.github.io/newyear/
 # 网易云音乐Web移动端 https://zikai-huang.github.io/kugou/
+# 图片压缩工具 https://zikai-huang.github.io/pictureCompress/
