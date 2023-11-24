@@ -1,0 +1,127 @@
+<!--
+ * @Autor        : huangzikai
+ * @Date         : 2023-11-24 18:02:42
+ * @LastEditTime : 2023-11-24 20:50:40
+ * @LastEditors  : huangzikai
+ * @Description  : 图片压缩
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>图片压缩工具</title>
+</head>
+<body>
+  <div class="app">
+    <h2 class="title">图片压缩工具</h2>
+    <div class="content">
+      <div class="header">
+        <input type="file" accept=".jpg, .jpeg, .png" class="upload" required>
+        <img src="" alt="" class="img">
+      </div>
+      <p class="imgInfo"></p>
+      <p class="qualityTitle">压缩质量（值越小压缩率越高,调整幅度为0.05，默认为0.35）：</p>
+      <label class="qualityLabel">
+        0.2
+        <input class="quality" type="range" min="0.2" max="0.5" step="0.05" value="0.35" style="width: 50vw">
+        0.5
+      </label>
+      <label>
+        指定压缩后宽度（整数）：
+        <input class="img-width" type="text" style="width: 50px"> px
+      </label>
+      <label>
+        指定压缩后高度（整数）：
+        <input class="img-height" type="text" style="width: 50px"> px
+      </label>
+      <button class="handleBtn" style="margin: auto; margin-top: 50px; width: 70px;">开始压缩</button>
+      <p style="color: rgb(245, 1, 1);">压缩完长按或右键“另存为”保存图片</p>
+    </div>
+  </div>
+  <script type="text/javascript">
+    const upload = document.querySelector('.upload');
+    const img = document.querySelector('.img');
+    const imgInfo = document.querySelector('.imgInfo');
+    const quality = document.querySelector('.quality');
+    const imgWidth = document.querySelector('.img-width');
+    const imgHeight = document.querySelector('.img-height');
+
+    let file;
+    upload.onchange = ()=>{
+      file = upload.files[0];
+      img.src = URL.createObjectURL(file);
+      imgInfo.textContent = `文件大小：${computeSize(file.size)}`
+      temImg = new Image();
+      temImg.src = img.src;
+      temImg.onload = function() {
+        imgWidth.value = temImg.width;
+        imgHeight.value = temImg.height;
+      }// console.log(file, img.naturalWidth, img.naturalHeight);
+    }
+    const btn = document.querySelector('.handleBtn');
+    btn.onclick = ()=>{
+      if(!file) return;
+      btn.disabled = true;
+      compressImg(file, Number(quality.value), imgWidth.value, imgHeight.value).then(res => {//compressImg方法见附录
+        img.src = URL.createObjectURL(res.file);
+        imgInfo.textContent = `文件大小：${computeSize(file.size)} -> ${computeSize(res.file.size)}`
+        file = res.file;
+        btn.disabled = false;
+      })
+    }
+
+
+    const compressImg = (file, quality, width, height) => {
+      if (file[0]) {
+        return Promise.all(Array.from(file).map(e => compressImg(e,
+          quality))) // 如果是 file 数组返回 Promise 数组
+      } else {
+        return new Promise((resolve) => {
+          const reader = new FileReader() // 创建 FileReader
+          reader.onload = ({
+            target: {
+              result: src
+            }
+          }) => {
+            const image = new Image(); // 创建 img 元素
+            image.onload = async () => {
+              const canvas = document.createElement('canvas'); // 创建 canvas 元素
+              console.log(width, height);
+              canvas.width = width || image.width;
+              canvas.height = height || image.height;
+              canvas.getContext('2d').drawImage(image, 0, 0, image.width, image.height); // 绘制 canvas
+              const canvasURL = canvas.toDataURL('image/jpeg', quality);
+              const buffer = atob(canvasURL.split(',')[1]);
+              let length = buffer.length;
+              const bufferArray = new Uint8Array(new ArrayBuffer(length));
+              while (length--) {
+                bufferArray[length] = buffer.charCodeAt(length);
+              }
+              const miniFile = new File([bufferArray], file.name, {
+                type: 'image/jpeg'
+              });
+              resolve({
+                file: miniFile,
+                origin: file,
+                beforeSrc: src,
+                afterSrc: canvasURL,
+              });
+            }
+            image.src = src;
+          };
+          reader.readAsDataURL(file);
+        })
+      }
+    }
+    const computeSize = (size)=>{
+      if (size === 0) return '0 B';
+		  const k = 1024, // or 1024
+      sizes = ['B', 'KB', 'MB'],
+      i = Math.floor(Math.log(size) / Math.log(k));
+      return (size / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
+    };
+  </script>
+</body>
+</html>
