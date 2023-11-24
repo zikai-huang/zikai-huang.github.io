@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>咩了个咩</title>
+</head>
+
+<body>
+  <!-- <button class="btn" style="position: fixed; top: 50%; left: 20%">播放</button> -->
+  <img src="./volume-off.svg" alt="" class="btn">
+  <div class="container">
+    <div id="app">
+      <!-- 放置选中的模块 -->
+      <div id="storageBox"></div>
+    </div>
+  </div>
+  <!-- 加载器 主要加载模块 -->
+  <audio autoplay loop id="music">
+    <source src="./bgMusic.mp3" type="audio/mpeg">
+  </audio>
+  <script type="text/javascript">
+    // window.onload = () => {
+    //   console.log('开始播放');
+    //   setInterval(toggleSound(), 100);
+    // };
+    // const toggleSound = () => {
+    //   const music = document.getElementById("music");//获取ID
+    //   console.log(music);
+    //   if (music.paused) { //判读是否播放
+    //     music.paused = false;
+    //     music.play(); //没有就播放
+    //   }
+    // };
+    const btn = document.querySelector('.btn');
+    const music = document.querySelector('#music');
+    btn.onclick = ()=>{
+      if(music.paused){
+        btn.src = './volume-loud.svg'
+        music.play();
+      } else {
+        btn.src = './volume-off.svg'
+        music.pause();
+      }
+      // console.log(music.paused);
+    };
+  </script>
+  <script async src="./index.js"></script>
+</body>
+
+</html>
