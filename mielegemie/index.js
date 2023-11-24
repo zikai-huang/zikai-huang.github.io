@@ -156,33 +156,34 @@ function checkBox() {
       index: index,
       id:item.targetDomClass.index
     })
-    for (let key in checkMap) {
-      if (checkMap[key].length == 3) {
-        // console.log('keyi');
-        // 删除数组中元素
-        hasBlockArr.splice(checkMap[key][0].index, 3)
-        // 删除dom中元素
-        setTimeout(() => {
-          checkMap[key].forEach((item) => {
-            const box = document.getElementById(item.id);
-            box.parentNode.removeChild(box);
-          })
-          // 改变其他dom元素的位置
-          hasBlockArr.forEach((item, index) => {
-            const left = startLeft + index * $width + 'px';
-            setStyle(item.target, {
-              left
-            });
-            item.targetDomClass.left = left;
-          })
-        }, 300)
-      }
-    }
   })
+  for (let key in checkMap) {
+    if (checkMap[key].length === 3) {
+      // 删除数组中元素
+      hasBlockArr.splice(checkMap[key][0].index, 3)
+      // 删除dom中元素
+      setTimeout(() => {
+        checkMap[key].forEach((item) => {
+          const box = document.getElementById(item.id);
+          box.parentNode.removeChild(box);
+        })
+        // 改变其他dom元素的位置
+        hasBlockArr.forEach((item, index) => {
+          const left = startLeft + index * $width + 'px';
+          setStyle(item.target, {
+            left
+          });
+          item.targetDomClass.left = left;
+        })
+      }, 300)
+    }
+  }
+
   // 验证状态
-  setTimeout(() => {
-    GameState();
-  }, 200);
+  if (hasBlockArr.length === $storeNum || !allBlock.length && !hasBlockArr.length)
+    setTimeout(() => {
+      GameState();
+    }, 200);
 }
 // 定义点击事件
 function clickBlock(target, targetDomClass) {
