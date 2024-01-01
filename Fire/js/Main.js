@@ -40,13 +40,12 @@
 		// let nowTime = new Date();//获取当前时间
 		// let setTime = new Date('2023/1/1');//设置结束时间
 		// let remianAllSeconds = Math.floor((setTime.getTime() - nowTime.getTime()) / 1000);//剩余总秒数
-		let remianAllSeconds = [1, 1, 1][Math.floor(Math.random() * 3)]
+		let remianAllSeconds = [0, 0, 1][Math.floor(Math.random() * 3)]; // 0:1 = 2:1
 		if (remianAllSeconds > 0) {
 			createFireworks(x, y);
 		}
 		else {
-			createFireworks(x, y, ['逢考必过', '心想事成', '平安喜乐', '万事顺意', '旗开得胜', '亲爱的然然新年快乐！', '亲爱的然然新年快乐！'][Math.floor(Math.random() * 7)] )
-			// createFireworks(x, y, ['亲爱的然然新年快乐！']);
+			createFireworks(x, y, ['心想事成', '平安喜乐', '万事顺意', '亲爱的晓晓新年快乐！', '亲爱的晓晓新年快乐！'][Math.floor(Math.random() * 5)] );
 		}
 	}
 	document.addEventListener("mousedown", mouseDownHandler);
