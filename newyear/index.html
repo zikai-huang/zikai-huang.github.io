@@ -1,0 +1,89 @@
+<!-- <html> -->
+
+<head>
+    <title>送给晓晓的新年烟花</title>
+    <style type="text/css">
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <style type="text/css">
+        #canvas {
+            background-image: './moon.jpg';
+            background-size: cover;
+        }
+        .moon {
+            /* width: 100vw; */
+            border-radius: 50px;
+            background-color: rgb(206, 239, 243);
+            width: 80px;
+            height: 80px;
+            position: fixed;
+            top: 80px;
+            right: 300px;
+            /* z-index: 1; */
+        }
+        .star1 {
+            border-radius: 50px;
+            background-color: rgb(255, 255, 255);
+            width: 5px;
+            height: 5px;
+            position: fixed;
+            top: 40px;
+            right: 300px;
+        }
+        .star2 {
+            border-radius: 50px;
+            background-color: rgb(255, 255, 255);
+            width: 5px;
+            height: 5px;
+            position: fixed;
+            top: 140px;
+            right: 450px;
+        }
+    </style>
+    <img class="moon" src="./moon.jpg" alt="">
+    <div class="star1"></div>
+    <div class="star2"></div>
+    <div id="canvas"></div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.fireworks.js"></script>
+
+    <script src="js//Main.js"></script>
+    <script type="text/javascript">
+        $('#canvas').fireworks({
+            sound: true, // sound effect
+            opacity: 0.4,
+            width: '100%',
+            height: '100%'
+        });
+        var time = setInterval(function () {
+            showTimes();
+        }, 1000)
+        function showTimes() {
+            let nowTime = new Date();//获取当前时间
+            let setTime = new Date('2023/1/11');//设置结束时间
+            let str;
+            let remianAllSeconds = Math.floor((setTime.getTime() - nowTime.getTime()) / 1000);//剩余总秒数
+            if (remianAllSeconds < 0) {
+                console.log("执行vioder");
+                let vider = document.getElementById("video_see");
+                vider.play();
+                vider.muted = false;
+                $('#fireworksField').show();
+                clearInterval(time)
+            } else {
+                $('#fireworksField').hide();
+            }
+        }
+    </script>
+</body>
+
+</html>
