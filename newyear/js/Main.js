@@ -65,10 +65,10 @@
 
 		if (text != "") {
 
-			var gap = 6;
+			var gap = 2;
 			var fontSize = 60;
 
-			textctx.font = fontSize + "rem Verdana";
+			textctx.font = fontSize + "px Verdana";
 			textctx.fillStyle = "#ffffff";
 
 			var textWidth = textctx.measureText(text).width;
