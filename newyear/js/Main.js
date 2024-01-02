@@ -45,7 +45,7 @@
 			createFireworks(x, y);
 		}
 		else {
-			createFireworks(x, y, ['心想事成', '平安喜乐', '万事顺意', '亲爱的晓晓新年快乐！', '亲爱的晓晓新年快乐！'][Math.floor(Math.random() * 5)] );
+			createFireworks(x, y, ['心想事成', '平安喜乐', 'offer+1', '亲爱的晓晓新年快乐！', '亲爱的晓晓新年快乐！'][Math.floor(Math.random() * 5)] );
 		}
 	}
 	document.addEventListener("mousedown", mouseDownHandler);
