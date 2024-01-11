@@ -3,5 +3,7 @@
 # 电商后台管理系统 https://zikai-huang.github.io/shop_manager/
 # 羊了个羊翻版 https://zikai-huang.github.io/mielegemie/
 # 新年烟花 https://zikai-huang.github.io/newyear/
+# 新年烟花2 https://zikai-huang.github.io/newyear2/
+# 代码雨 https://zikai-huang.github.io/codeRain/
 # 网易云音乐Web移动端 https://zikai-huang.github.io/kugou/
 # 图片压缩工具 https://zikai-huang.github.io/pictureCompress/
