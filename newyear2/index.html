@@ -1,7 +1,7 @@
 <!--
  * @Autor        : huangzikai
  * @Date         : 2024-01-11 16:22:47
- * @LastEditTime : 2024-01-11 16:23:55
+ * @LastEditTime : 2024-01-11 16:51:01
  * @LastEditors  : huangzikai
  * @Description  :
 -->
@@ -27,6 +27,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="./style.css">
   <style>
+    .moon {
+            /* width: 100vw; */
+            border-radius: 50px;
+            width: 60px;
+            height: 60px;
+            position: fixed;
+            top: 80px;
+            right: 50px;
+            /* z-index: 1; */
+        }
+    .star1 {
+      z-index: 1;
+      border-radius: 50px;
+      background-color: rgb(255, 255, 255);
+      width: 5px;
+      height: 5px;
+      position: fixed;
+      top: 70px;
+      right: 130px;
+    }
+    .star2 {
+      z-index: 1;
+      border-radius: 50px;
+      background-color: rgb(255, 255, 255);
+      width: 5px;
+      height: 5px;
+      position: fixed;
+      top: 160px;
+      right: 85px;
+    }
     * {
       position: relative;
       box-sizing: border-box;
@@ -237,6 +267,9 @@
 <body>
   <!-- partial:index.partial.html -->
   <!-- SVG Spritesheet -->
+  <img class="moon" src="./moon.jpg" alt="" style="z-index: 1">
+  <div class="star1"></div>
+  <div class="star2"></div>
   <div style="height: 0; width: 0; position: absolute; visibility: hidden;">
     <svg xmlns="http://www.w3.org/2000/svg">
       <symbol id="icon-play" viewBox="0 0 24 24">
