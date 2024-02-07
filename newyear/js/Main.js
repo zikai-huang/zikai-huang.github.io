@@ -47,7 +47,7 @@
 			createFireworks(x, y);
 		}
 		else {
-			createFireworks(x, y, ['心想事成', '平安喜乐', '早日发财', '早日找到满意的工作', '祝亲爱的晓晓新年快乐！'][Math.floor(Math.random() * 5)] );
+			createFireworks(x, y, ['心想事成', '平安喜乐', '学业有成', '奖杯多多', '祝亲爱的琳琳新年快乐！'][Math.floor(Math.random() * 5)] );
 		}
 	}
 	document.addEventListener("mousedown", mouseDownHandler);
