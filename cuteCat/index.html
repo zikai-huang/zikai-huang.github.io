@@ -1,0 +1,203 @@
+<!--
+ * @Author: huangzikai
+ * @Date: 2024-11-14 20:23:34
+ * @LastEditTime: 2024-11-14 20:24:02
+ * @LastEditors: huangzikai
+ * @Descripttion:
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For DJR</title>
+    <style>
+        #app {
+            padding: 100px;
+
+            .cat {
+                position: relative;
+                width: 94px;
+                height: 74px;
+                background-color: #fff;
+                border: 1px solid #999;
+                border-radius: 40px;
+
+                .hair {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 10px;
+                    height: 24px;
+                    background-color: pink;
+                    border-radius: 10px;
+
+                    &::before {
+                        position: absolute;
+                        left: 12px;
+                        content: "";
+                        height: 24px;
+                        width: 10px;
+                        border-radius: 10px;
+                        background-color: pink;
+                    }
+
+                    &::after {
+                        position: absolute;
+                        left: -12px;
+                        content: "";
+                        height: 20px;
+                        width: 10px;
+                        border-radius: 10px;
+                        background-color: pink;
+                    }
+                }
+
+                .ear {
+                    position: absolute;
+                    top: -6px;
+                    z-index: -1;
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid #999;
+                    border-top-left-radius: 10px;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: -12px;
+                        left: -13px;
+                        border: 20px solid transparent;
+                        border-bottom-color: pink;
+                        transform: rotate(-45deg);
+                    }
+                }
+
+                .left-ear {
+                    left: 0;
+                    transform: rotate(-4deg) skewY(20deg);
+                }
+
+                .right-ear {
+                    right: 0;
+                    transform: rotate(74deg) skewY(20deg);
+
+                    &::after {
+                        top: -14px;
+                        left: -10px;
+                    }
+                }
+
+                .eye {
+                    position: absolute;
+                    top: 26px;
+                    height: 10px;
+                    width: 12px;
+                    border-radius: 50% / 100% 100% 0 0;
+                    border: 3px solid #000;
+                    border-bottom: none;
+                }
+
+                .left-eye {
+                    left: 20%;
+                }
+
+                .right-eye {
+                    right: 20%;
+                }
+
+                .mouth {
+                    position: absolute;
+                    bottom: 14px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 2px;
+                    height: 8px;
+                    background-color: #000;
+
+                    &::before {
+                        position: absolute;
+                        top: -6px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        content: "";
+                        width: 10px;
+                        height: 6px;
+                        border-radius: 50% / 0 0 100% 100%;
+                        background-color: #000;
+                    }
+
+                    &::after {
+                        position: absolute;
+                        bottom: 0px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        content: "";
+                        width: 14px;
+                        height: 4px;
+                        border-radius: 50% / 0 0 100% 100%;
+                        border: 2px solid #000;
+                        border-top: none;
+                    }
+                }
+
+                .t {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 18px;
+                    display: flex;
+                    justify-content: space-around;
+
+                    .public-style {
+                        height: 1px;
+                        width: 10px;
+                        background-color: #000;
+                        content: "";
+                        position: absolute;
+                        top: 4px;
+                    }
+
+                    .f {
+                        height: 1px;
+                        width: 10px;
+                        background-color: #000;
+
+                        &::before {
+                            .public-style;
+                            left: 20px;
+                            transform: rotate((-25deg));
+                        }
+
+                        &::after {
+                            .public-style;
+                            right: 20px;
+                            transform: rotate(25deg);
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="cat">
+            <div class="hair"></div>
+            <div class="ear left-ear"></div>
+            <div class="ear right-ear"></div>
+            <div class="eye left-eye"></div>
+            <div class="eye right-eye"></div>
+            <div class="mouth"></div>
+            <div class="t">
+                <div class="f"></div>
+                <div class="f"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
