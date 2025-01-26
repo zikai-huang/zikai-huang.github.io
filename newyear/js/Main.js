@@ -47,7 +47,7 @@
 			createFireworks(x, y);
 		}
 		else {
-			createFireworks(x, y, ['心想事成', '平安喜乐', '旺旺旺旺', '祝胡晓颖新年快乐！！！'][Math.floor(Math.random() * 4)] );
+			createFireworks(x, y, ['很高兴认识你', '未来有我你不孤单', '想陪你一辈子', '祝亲爱的胡晓颖新年快乐！！！'][Math.floor(Math.random() * 4)] );
 		}
 	}
 	document.addEventListener("mousedown", mouseDownHandler);
