@@ -54,8 +54,8 @@
       width: 5px;
       height: 5px;
       position: fixed;
-      top: 210px;
-      right: 130px;
+      top: 200px;
+      right: 140px;
     }
     * {
       position: relative;
@@ -299,7 +299,7 @@
 
   <!-- App -->
   <div class="container">
-    <div id="loading-init">加载中...</div>
+    <div id="loading-init">Loading...</div>
     <div id="stage-container" class="remove">
       <div id="canvas-container">
         <canvas id="trails-canvas"></canvas>
@@ -328,24 +328,25 @@
             <use href="#icon-close"></use>
           </svg>
         </div>
-        <div id="menu__header">设置</div>
+        <div id="menu__header">Settings</div>
         <form>
           <div class="form-option form-option--select">
-            <label>烟花类型</label>
+            <label>Shell Type</label>
             <select id="shell-type"></select>
           </div>
           <div class="form-option form-option--select">
-            <label>烟花大小</label>
+            <label>Shell Size</label>
             <select id="shell-size"></select>
           </div>
           <div class="form-option form-option--checkbox">
-            <label id="auto-launch-label"><input id="auto-launch" type="checkbox" /><span>自动烟火</span></label>
+            <label id="auto-launch-label"><input id="auto-launch" type="checkbox" /><span>Auto Fire</span></label>
           </div>
           <div class="form-option form-option--checkbox">
-            <label id="finale-mode-label"><input id="finale-mode" type="checkbox" /><span>最终模式</span></label>
+            <label id="finale-mode-label"><input id="finale-mode" type="checkbox" /><span>Finale Mode</span></label>
           </div>
           <div class="form-option form-option--checkbox">
-            <label id="hide-controls-label"><input id="hide-control隐藏设置</span></label>
+            <label id="hide-controls-label"><input id="hide-controls" type="checkbox" /><span>Hide
+                Controls</span></label>
           </div>
         </form>
       </div>
