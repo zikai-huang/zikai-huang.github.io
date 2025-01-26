@@ -328,25 +328,24 @@
             <use href="#icon-close"></use>
           </svg>
         </div>
-        <div id="menu__header">Settings</div>
+        <div id="menu__header">设置</div>
         <form>
           <div class="form-option form-option--select">
-            <label>Shell Type</label>
+            <label>烟花类型</label>
             <select id="shell-type"></select>
           </div>
           <div class="form-option form-option--select">
-            <label>Shell Size</label>
+            <label>烟花大小</label>
             <select id="shell-size"></select>
           </div>
           <div class="form-option form-option--checkbox">
-            <label id="auto-launch-label"><input id="auto-launch" type="checkbox" /><span>Auto Fire</span></label>
+            <label id="auto-launch-label"><input id="auto-launch" type="checkbox" /><span>自动烟火</span></label>
           </div>
           <div class="form-option form-option--checkbox">
-            <label id="finale-mode-label"><input id="finale-mode" type="checkbox" /><span>Finale Mode</span></label>
+            <label id="finale-mode-label"><input id="finale-mode" type="checkbox" /><span>最终模式</span></label>
           </div>
           <div class="form-option form-option--checkbox">
-            <label id="hide-controls-label"><input id="hide-controls" type="checkbox" /><span>Hide
-                Controls</span></label>
+            <label id="hide-controls-label"><input id="hide-control隐藏设置</span></label>
           </div>
         </form>
       </div>
@@ -768,16 +767,16 @@
 
 
     const shellTypes = {
-      'Random': randomShell,
-      'Crackle': crackleShell,
-      'Crossette': crossetteShell,
-      'Crysanthemum': crysanthemumShell,
-      'Falling Leaves': fallingLeavesShell,
-      'Floral': floralShell,
-      'Horse Tail': horsetailShell,
-      'Palm': palmShell,
-      'Ring': ringShell,
-      'Willow': willowShell
+      '随机': randomShell,
+      '爆裂': crackleShell,
+      '门耳': crossetteShell,
+      '结晶': crysanthemumShell,
+      '落叶': fallingLeavesShell,
+      '花纹': floralShell,
+      '马尾': horsetailShell,
+      '手掌': palmShell,
+      '环状': ringShell,
+      '柳条': willowShell
     };
 
     const shellNames = Object.keys(shellTypes);
