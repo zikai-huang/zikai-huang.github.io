@@ -38,7 +38,7 @@ var IMGS = [
   './img/6.png',
   './img/7.png',
   './img/8.png',
-  // './img/b9.png',
+  './img/9.png',
   // './img/b10.png',
   // './img/11.png',
 ];
