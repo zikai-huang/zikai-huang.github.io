@@ -30,16 +30,16 @@ var BlockNums = 15;
 var allBlock = [];
 // 图片的地址
 var IMGS = [
-  './img/b1.png',
-  './img/b2.png',
-  './img/b3.png',
-  './img/b4.png',
-  './img/b5.png',
-  './img/b6.png',
-  './img/b7.png',
-  './img/b8.png',
-  './img/b9.png',
-  './img/b10.png',
+  './img/1.png',
+  './img/2.png',
+  './img/3.png',
+  './img/4.png',
+  './img/5.png',
+  './img/6.png',
+  './img/7.png',
+  './img/8.png',
+  // './img/b9.png',
+  // './img/b10.png',
   // './img/11.png',
 ];
 // 游戏是否结束
